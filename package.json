@@ -1,0 +1,24 @@
+{
+  "name": "home-sweet-home-project",
+  "version": "1.0.0",
+  "description": "주택청약 모아보기",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^15.0.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.1",
+    "@types/react": "19.0.1",
+    "typescript": "5.7.2"
+  }
+}
