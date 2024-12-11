@@ -17,13 +17,14 @@ async function getDataDNDN() {
 }
 
 async function getDataLH() {
-  const response = await axios.get('http://apis.data.go.kr/B552555/lhNoticeInfo1/getNoticeInfo1', {
+  const response = await axios.get('http://apis.data.go.kr/B552555/lhLeaseNoticeInfo1/lhLeaseNoticeInfo1', {
     params: {
       serviceKey: process.env.DataAPI,
       PG_SZ: 10,
       PAGE: 1,
-      SCH_ST_DT: '2024-01-03',
-      SCH_ED_DT: '2024-12-11'
+      PAN_NT_ST_DT: '20241011',
+      CLSG_DT: '20241211',
+      UPP_AIS_TP_CD: '06' //공고 유형 코드 [05: 분양주택 , 06: 임대주택]
     }
   })
   // console.dir(response)
@@ -35,7 +36,7 @@ export default async function Page() {
 
   // const {data} = await getData();
   const data = await getDataLH();
-  console.dir(data[1].dsList);
+  console.dir(data);
 
   // console.log(data.data);
 
@@ -44,7 +45,7 @@ export default async function Page() {
       <h1 className="w-full text-2xl font-bold text-center">청약정보 모아보기</h1>
       <hr className="my-4" />
       {data[1].dsList.map((item, key) => (
-        <div key={key}>{item.BBS_TL}</div>
+        <div key={key}>{item.PAN_NM}</div>
       ))}
     </>
   )
