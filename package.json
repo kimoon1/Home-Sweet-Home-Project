@@ -8,11 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tailwind" : "npx tailwindcss -i ./style/tailwindcss.css -o ./style/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./style/tailwindcss.css -o ./style/output.css --watch"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.7.9",
     "next": "^15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
