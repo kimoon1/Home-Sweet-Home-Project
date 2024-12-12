@@ -60,7 +60,7 @@ export default async function Page() {
         <div className="text-slate-900 py-2.5 border-b text-sm border-b-neutral-400 bg-indigo-50 text-center">상태</div>
 
         {/*여기부터 시작 */}
-        {LHMap.map((LHitem, idx) => (
+        {LHMap.length > 0 && LHMap.map((LHitem, idx) => (
           <React.Fragment key={idx}>
             <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.RNUM}</div>
             <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.AIS_TP_CD_NM}</div>
