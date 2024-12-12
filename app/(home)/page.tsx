@@ -1,23 +1,23 @@
 import axios from "axios";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 
 //든든 전세
-async function getDataDNDN() {
-  console.log(process.env.dndnAPI)
-  // await new Promise((resolve) => setTimeout(resolve, 10));
-  const response = await axios.get('https://api.odcloud.kr/api/15139525/v1/uddi:5b6bf851-162c-4927-9783-b4a391488c8d?page=1&perPage=10', {
-    params: {
-      page: 1,
-      perPage: 10,
-      serviceKey: process.env.DataAPI
-    }
-  });
+// async function getDataDNDN() {
+//   console.log(process.env.dndnAPI)
+//   // await new Promise((resolve) => setTimeout(resolve, 10));
+//   const response = await axios.get('https://api.odcloud.kr/api/15139525/v1/uddi:5b6bf851-162c-4927-9783-b4a391488c8d?page=1&perPage=10', {
+//     params: {
+//       page: 1,
+//       perPage: 10,
+//       serviceKey: process.env.DataAPI
+//     }
+//   });
 
-  return response
-}
+//   return response
+// }
 
 
 //lh 청약 정보 가져오기
@@ -43,7 +43,7 @@ export default async function Page() {
   const LHdata = await getDataLH();
   const LHMap = LHdata[1].dsList;
 
-  console.log(LHMap[0]);
+  // console.log(LHMap[0]);
   // console.log(data.data);
 
   return (
