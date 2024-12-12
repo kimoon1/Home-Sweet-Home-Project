@@ -63,16 +63,14 @@ export default async function Page() {
         {LHMap.map((LHitem, idx) => (
           <React.Fragment key={idx}>
             <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.RNUM}</div>
-            <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.AIS_TP_CD_NM}</div>
-            <div className="py-2 text-sm truncate inline-block border-b border-b-neutral-200">
+            <div className="py-2 text-sm truncate inline-block border-b border-b-neutral-200 text-center">{LHitem.AIS_TP_CD_NM}</div>
+            <div className="py-2 text-sm truncate block border-b border-b-neutral-200 hover:text-rose-500">
               <Link target="blank" href={LHitem.DTL_URL_MOB}>{LHitem.PAN_NM}</Link>
-              
             </div>
-            <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.CNP_CD_NM}</div>
-            
-            <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.PAN_NT_ST_DT}</div>
-            <div className="py-2 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.CLSG_DT}</div>
-            <div className="py-2 text-emerald-600 text-sm flex border-b border-b-neutral-200 justify-center">{LHitem.PAN_SS}</div>
+            <div className="py-2 text-sm truncate block border-b border-b-neutral-200 text-center">{LHitem.CNP_CD_NM}</div>
+            <div className="py-2 text-sm truncate block border-b border-b-neutral-200 text-center">{LHitem.PAN_NT_ST_DT}</div>
+            <div className="py-2 text-sm truncate block border-b border-b-neutral-200 text-center">{LHitem.CLSG_DT}</div>
+            <div className="py-2 text-emerald-600 truncate block text-sm border-b border-b-neutral-200 text-center">{LHitem.PAN_SS}</div>
           </React.Fragment>
         ))}
 
