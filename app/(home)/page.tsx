@@ -2,6 +2,7 @@ import axios from "axios";
 // import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import SearchBox from "../../components/SearchBox";
 
 
 //든든 전세
@@ -50,6 +51,8 @@ export default async function Page() {
     <>
       <h1 className="w-full text-2xl font-bold text-center">청약정보 모아보기</h1>
       <hr className="my-4" />
+      <SearchBox />
+
       <div className="text-gray-700 font-bold grid grid-cols-table justify-items-stretch auto-cols-max border-t-table border-t-blue-900 ">
         <div className="text-slate-900 py-2.5 border-b text-sm border-b-neutral-400 bg-indigo-50 text-center">번호</div>
         <div className="text-slate-900 py-2.5 border-b text-sm border-b-neutral-400 bg-indigo-50 text-center">유형</div>

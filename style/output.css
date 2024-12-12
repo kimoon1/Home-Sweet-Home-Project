@@ -579,17 +579,20 @@ video {
   width: 100%;
 }
 
-.max-w-max {
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-
 .auto-cols-max {
   grid-auto-columns: max-content;
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-cols-table {
   grid-template-columns: 1fr 2fr 4fr 2fr 2fr 2fr 2fr;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .justify-center {
@@ -600,10 +603,22 @@ video {
   justify-items: stretch;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b {
@@ -612,6 +627,16 @@ video {
 
 .border-t-table {
   border-top-width: 3px;
+}
+
+.border-blue-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
+}
+
+.border-blue-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(191 219 254 / var(--tw-border-opacity, 1));
 }
 
 .border-b-neutral-200 {
@@ -632,6 +657,20 @@ video {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-8 {
@@ -685,31 +724,6 @@ video {
 .text-slate-900 {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity, 1));
-}
-
-.hover\:border-b-violet-300:hover {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(196 181 253 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-b-violet-600:hover {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(124 58 237 / var(--tw-border-opacity, 1));
-}
-
-.hover\:bg-violet-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:text-violet-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(124 58 237 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-violet-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(109 40 217 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-rose-500:hover {
