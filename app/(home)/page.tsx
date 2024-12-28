@@ -47,7 +47,8 @@ export default async function Page() {
 
   // const {data} = await getData();
   const todayDate = new Date();
-  const oneMonthAgoDate = new Date(todayDate); // 오늘 날짜를 복사
+  // 올해 1월 1일로 고정
+const oneMonthAgoDate = new Date(todayDate.getFullYear(), 0, 1)
 
    oneMonthAgoDate.setMonth(todayDate.getMonth() - 6) // 날짜를 한달전으로 변경
    
