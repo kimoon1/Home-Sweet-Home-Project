@@ -25,20 +25,24 @@ import SearchBox from "../../components/SearchBox";
 //lh 청약 정보 가져오기
 async function getDataLH({ startDate, endDate, region } : { startDate:String , endDate: String, region: String }) {
   'use server'
+  console.log(startDate);
+
   const response = await axios.get('http://apis.data.go.kr/B552555/lhLeaseNoticeInfo1/lhLeaseNoticeInfo1', {
     params: {
       serviceKey: process.env.DataAPI,
       PG_SZ: 20,
       PAGE: 1,
       PAN_NM: '', //공고명
-      PAN_NT_ST_DT: startDate, // 공고게시일
-      CLSG_DT: endDate, // 공고마감일
+      PAN_NT_ST_DT: '20231231', // 공고게시일
+      CLSG_DT: '20251231', // 공고마감일
       CNP_CD: region, //지역코드
       PAN_SS: '공고중', //공고상태코드
-      UPP_AIS_TP_CD: '06' //공고 유형 코드 [05: 분양주택 , 06: 임대주택]
+      // UPP_AIS_TP_CD: '06' //공고 유형 코드 [05: 분양주택 , 06: 임대주택]
     }
   })
-  // console.dir(response)
+  console.log('=============')
+  console.dir(response.data[1])
+  console.log('=============')
   return response.data
 }
 
@@ -50,13 +54,14 @@ export default async function Page() {
   // 올해 1월 1일로 고정
 const oneMonthAgoDate = new Date(todayDate.getFullYear(), 0, 1)
 
-   oneMonthAgoDate.setMonth(todayDate.getMonth() - 6) // 날짜를 한달전으로 변경
+  //  oneMonthAgoDate.setMonth(todayDate.getMonth() - 6) // 날짜를 한달전으로 변경s
+  console.log(oneMonthAgoDate, 'one')
    
    const today = todayDate.toISOString().split('T')[0]
    const oneMonthAgo = oneMonthAgoDate.toISOString().split('T')[0]
    
   
-  const LHdata = await getDataLH({startDate : today, endDate : oneMonthAgo, region : '11'});
+  const LHdata = await getDataLH({startDate : oneMonthAgo, endDate : today, region : '11'});
   let LHMap = LHdata[1].dsList || [];
 
   // console.log(LHMap[0]);
